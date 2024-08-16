@@ -2,14 +2,18 @@
 <html lang="en">
     <head>
         <link rel="stylesheet" href="./styles.css">
-        
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <!-- Compiled and minified JavaScript -->
+       
     </head> 
     <body>
         <div class="container">
             <div >
                 <h1 class = "header_text">Este mes ha sido muy bueno a tú lado, me gustaría seguir cosechando mucho más</h1>
-                <h1 class = "header_text">Así que solo hay una cosa por preguntar</h1>
-                <h1 class = "header_text" id="pregunta">¿Quieres Ser Mi Novia?</h1>
+                <!--<h1 class = "header_text">Así que solo hay una cosa por preguntar</h1>-->
+                <!--<div class="contenido2" style="display:none"><h1 class = "header_text" id="pregunta">¿Quieres Ser Mi Novia?</h1></div>-->
+                <div class="content" style="display: none;"><h1 class = "header_text">Así que solo hay una cosa por preguntar</h1></div>
+                <div class="content2" style="display:none;"><h1 class = "header_text" id="pregunta">¿Quieres Ser Mi Novia?</h1></div>
             </div>
             <div class="gif_container">
                 <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDdtZ2JiZDR0a3lvMWF4OG8yc3p6Ymdvd3g2d245amdveDhyYmx6eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/cLS1cfxvGOPVpf9g3y/giphy.gif" alt="Cute animated illustration">
@@ -18,7 +22,18 @@
                 <button class="btn" id = "yesButton" onclick="nextPage()">Sí</button>
                 <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">No</button>
                 <button class="btn" id = "NoloDudesButton" onclick="nextPage()">No lo dudes</button>
-                <script>
+                
+            <script type="text/javascript">
+                    $(document).ready(function() {
+                        setTimeout(function() {
+                            $(".content").fadeIn(1500);
+                        },3000);
+                    
+                        setTimeout(function() {
+                            $(".content2").fadeIn(1500);
+                        },6000);
+                    });
+
                     function nextPage() {
                         window.location.href = "yes.html";
                     }
@@ -29,6 +44,8 @@
                         document.getElementById('noButton').style.left = `${x}px`;
                         document.getElementById('noButton').style.top = `${y}px`;
                     }
+
+                    
                     
 
                 </script> 
